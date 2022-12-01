@@ -1,0 +1,105 @@
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="caseStories">
+  <div class="my-auto" id="caseStories-content">
+    <h2 class="mb-5">Case Stories</h2>
+    {{ range $.Site.Data.caseStories }}
+        <div class="subheading mb-3 caseStories-heading">{{ .grouping }}</div>
+            <ul>
+            {{ range .caseStories }}
+                {{ if isset . "name" }}
+                    {{ $devicon := cond (in $.Site.Data.devicons (lower .icon)) (lower .icon) (cond (in $.Site.Data.devicons (lower .name)) (lower .name) "terminal_badge") }}
+                    <li class="list-inline-item">
+                      <i class="devicons devicons-{{ $devicon }}"></i>
+                      {{if isset . "link"}}
+                          <a href="{{.link}}">{{ .name }}</a>
+                      {{ else }}
+                          {{ .name }}
+                      {{ end }}
+                    </li>
+                {{ else }}
+                  <li class="list-inline-item">
+                    <i class="devicons devicons-{{ cond (in $.Site.Data.devicons (lower .)) (lower .) "terminal_badge" }}"></i>
+                    {{ . }}
+                  </li>
+                {{ end }}
+            {{ end }}
+            </ul>
+    {{ end }}
+    <h3 style="text-align: center; size: 10px;">Want to know how we drive success for our customers? <br><br>Read our case stories to learn more</h3>
+    
+    <div class="row">
+      <div class="column">
+        <div class="content">
+          <img src="mobile.jpg" alt="Mobile Application" style="width:100%;height: 150px">
+          <h3>Mobile Application</h3>
+          <p>How a Mobile App Built on a Legacy Web Solution Helped ​Gain Incremental Revenue.A legacy hosted web solution needed a mobile solution to serve their existing customers and attract new ones.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://incubxperts.com/case-stories/mobile-app-legacy-web-solution-greater-revenue/" style="font-size: 15px;">Read More</a></button>
+        </div>
+      </div>
+      
+     
+           
+      <div class="column">
+        <div class="content">
+        <img src="hospital.jpg" alt="Communication" style="width:100%;height: 150px">
+          <h3>Hospitality Design</h3>
+          <p>The same holds for the hospitality industry. Consumers prefer hotels following eco-friendly and health-friendly practices. To keep up with these needs, an American Environmental Services Company, which has successfully partnered</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://www.incubxperts.com/case-stories/hospitality-vendor-aggregator-platform/"style="font-size: 15px;">Read More</a></button>
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="communication.jpeg" alt="Communication" style="width:100%;height: 150px">
+          <h3>Communication</h3>
+          <p>A business wished to seamlessly communicate with clients and minimize the need for multiple channels for communication. The requirement was to use Slack to send, receive, and respond to clients’ text messages.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://www.incubxperts.com/case-stories/communication-platform-integration/"style="font-size: 15px;">Read More</a></button>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="big-four.jpg" alt="Communication" style="width:100%;height: 150px">
+          <h3>A Big Four</h3>
+          <p>Every big enterprise organization faces challenges of Identification & Management of Risks across departments and geographies. Without a platform, it becomes difficult to enforce a standard approach to Risk Management.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://www.incubxperts.com/case-stories/enterprise-risk-management-solution/"style="font-size: 15px;">Read More</a></button>
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+        <img src="CRM.jpg" alt="Communication" style="width:100%;height: 150px">
+          <h3>CRM Solution</h3>
+          <p>Sales in a leading fuel supplying company is a field-intensive activity. Having visibility of the sales process and the key metrics related to it was essential for the top management to ensure optimum productivity of the sales team.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://incubxperts.com/case-stories/crm-solution/"style="font-size: 15px;">Read More</a></button>
+
+        </div>
+      </div><div class="column">
+        <div class="content">
+        <img src="social.jpg" alt="Communication" style="width:100%;height: 150px">
+          <h3>Social Apps</h3>
+          <p>A technology company was seeking to build an innovative social platform as a part of its CSR initiative.The aim was to tap into the inherent giving nature of human beings and provide a platform to help connect with those in need.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://incubxperts.com/case-stories/social-marketplace-app/"style="font-size: 15px;">Read More</a></button>
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <img src="fuel.jpg" alt="Fuel Management" style="width:100%;height: 150px">
+          <h3>Contract Management</h3>
+          <p>Fuel transportation and delivery is a major component of fuel supply logistics. Selecting the best transport provider and finalizing delivery details immediately after placing a fuel order would make the fuel buying process all-inclusive and more efficient.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://incubxperts.com/case-stories/contract-management-solution/"style="font-size: 15px;">Read More</a></button>
+        </div>
+      </div>
+     
+      <div class="column">
+        <div class="content">
+        <img src="health.jpg" alt="Healthcare" style="width:100%;height: 150px">
+          <h3>Healthcare</h3>
+          <p>The medical product (drugs and devices) recall process was archaic, slow, paper-based, and reliant on snail mail.There was a need for a recall management solution to combat these problems and make the recall process much faster and efficient.</p>
+          <button style="margin-left: 23%;height: 40px;width: 100px;"><a href="https://www.incubxperts.com/case-stories/medical-product-recall-management/"style="font-size: 15px;">Read More</a></button>
+
+        </div>
+      </div>
+    <!-- END GRID -->
+    </div>
+  </div>
+</section>

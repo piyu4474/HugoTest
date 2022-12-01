@@ -1,7 +1,6 @@
 ---
 title: Demo
 date: 2022-11-30T11:03:49.000+05:30
-draft: true
 
 ---
 ## What is Lorem Ipsum?
